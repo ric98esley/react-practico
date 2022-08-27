@@ -11,10 +11,10 @@ import NewPassword from "../pages/NewPassword";
 import PasswordRecovery from "../pages/PasswordRecovery";
 import NotFound from "../pages/NotFound";
 
-import "../styles/global.css";
-import SendEmail from "../pages/SendEmail";
-import Checkout from "../pages/Checkout";
-import Orders from "../pages/Orders";
+import "@styles/global.css";
+import SendEmail from "@pages/SendEmail";
+import Checkout from "@pages/Checkout";
+import Orders from "@pages/Orders";
 
 const App = () => {
   return (

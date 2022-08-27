@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/MyAccount.scss'
+import '@styles/MyAccount.scss'
 
 const MyAccount = () => {
   return (
@@ -29,7 +29,6 @@ const MyAccount = () => {
             type="submit"
             value="Edit"
             className="secondary-button MyAccount-button"
-            MyAccount
           />
         </form>
       </div>

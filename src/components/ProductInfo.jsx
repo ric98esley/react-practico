@@ -1,11 +1,15 @@
 import React from "react";
-import '../styles/ProductInfo.scss'
+import '@styles/ProductInfo.scss'
+
+import addToCard from "@icons/bt_add_to_cart.svg";
+
+const productInfoImg = "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
 const ProductInfo = () => {
   return (
     <>
       <img
-        src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        src={productInfoImg}
         alt="bike"
       />
       <div class="Product-Info">
@@ -16,7 +20,7 @@ const ProductInfo = () => {
           function, add your hall or workspace.
         </p>
         <button class="primary-button add-to-cart-button">
-          <img src="./icons/bt_add_to_cart.svg" alt="add to cart" />
+          <img src={addToCard} alt="add to cart" />
           Add to cart
         </button>
       </div>
