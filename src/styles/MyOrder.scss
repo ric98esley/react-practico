@@ -13,6 +13,15 @@
     border: 1 solid var(--vert-light-pink);
 }
 
+.my-order-content{
+    overflow-y: scroll;
+    max-height: 50vh;
+    scroll-behavior: smooth;
+}
+.my-order-content::-webkit-scrollbar{
+    display: none;
+}
+
 .title-container {
     display: flex;
 }
