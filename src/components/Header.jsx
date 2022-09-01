@@ -11,15 +11,9 @@ import shoppingCart from "@icons/icon_shopping_cart.svg";
 import AppContext from "../context/AppContext";
 
 const Header = () => {
-  const [toggle, setToggle] = useState(false);
-  const { state, toggleOrders, changeToggle } = useContext(AppContext);
-
-
-  const handleToggle = () => {
-    setToggle(!toggle);
-  };
-  const handleToggleOrders = () => {
-    changeToggle();
+  const { state, toggleOrders, toggleMenu , changeToggle } = useContext(AppContext);
+  const handleToggle = toggle => {
+    changeToggle(toggle);
   };
   return (
     <nav>
@@ -51,19 +45,19 @@ const Header = () => {
 
       <div className="navbar-right">
         <ul>
-          <li className="navbar-email" onClick={handleToggle}>
+          <li className="navbar-email" onClick={() => handleToggle("menu")}>
             platzi@example.com
           </li>
           <li
             className="navbar-shopping-cart"
-            onClick={() => handleToggleOrders()}
+            onClick={() => handleToggle("cart")}
           >
             <img src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
         </ul>
       </div>
-      {toggle && <Menu />}
+      {toggleMenu && <Menu />}
       {toggleOrders && <MyOrder />}
     </nav>
   );

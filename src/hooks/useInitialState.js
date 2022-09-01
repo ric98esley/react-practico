@@ -7,9 +7,15 @@ const initialState = {
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
   const [toggleOrders, setToggleOrders] = useState(false);
-
-  const changeToggle = () => {
-    setToggleOrders(!toggleOrders);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const changeToggle = toggle => {
+    if(toggle === "menu"){
+      setToggleMenu(!toggleMenu);
+      setToggleOrders(false);
+    } else if(toggle === "cart"){
+      setToggleOrders(!toggleOrders);
+      setToggleMenu(false);
+    }
   };
 
   const addToCart = (product) => {
@@ -29,6 +35,7 @@ const useInitialState = () => {
   return {
     state,
     toggleOrders,
+    toggleMenu,
     addToCart,
     removeFromCart,
     changeToggle,
